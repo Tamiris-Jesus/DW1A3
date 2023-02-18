@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Phudu&family=Press+Start+2P&display=swap');
+
+*{
+ /* background-color: rgb(230,230,250);*/
+ background-image: url(./img/1640342462-learning-web-development.avif);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
+
+}
+
+h1{
+  font-family:'Phudu', cursive;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 2%;
+}
+a{
+  font-size: 25px;
+}
+
+h3{
+  font-family: monospace;
+  text-align: center;
+  font-size: 20px;
+}
+
+h2{
+  font-family: monospace;
+  font-size: 25px;
+}
