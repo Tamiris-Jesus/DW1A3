@@ -1,3 +1,4 @@
+
 const Modal = {
     open(){
      // Adicionar a classe active ao modal
@@ -33,11 +34,14 @@ const Transaction = {
       App.reload()
     },
 
-    remove(index){
-      Transaction.all.splice(index, 1)
-
-      App.reload()
-    },
+  /* Alterações - mensagem de confirmação de exclusão da transação*/ 
+      remove(index){
+        const confirmation = confirm("Tem certeza que deseja excluir essa transação?");
+        if (confirmation) {
+          Transaction.all.splice(index, 1);
+          App.reload()
+        }
+      },
 
     incomes() {
         let income = 0;
@@ -101,7 +105,17 @@ const DOM = {
       document
         .getElementById('totalDisplay')
         .innerHTML = Utils.formatCurrency(Transaction.total())
-  },
+
+/*  Alteração - Mudando background do card total para vermelho no caso
+de valor negativo */ 
+
+        if (Transaction.total() < 0) {
+          document.querySelector('.total').style.backgroundColor = '#f24336';
+        } else {
+          document.querySelector('.total').style.backgroundColor = '';
+        }
+
+      },
 
   clearTransactions(){
     DOM.transactionsContainer.innerHTML = ""
@@ -204,6 +218,7 @@ const Form = {
       }
     }
 }
+
 
 const App = {
   init(){
