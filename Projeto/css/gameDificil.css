@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 
 :root{
   --fonteRanking: rgb(5, 2, 0);
@@ -11,7 +13,7 @@
   box-sizing: border-box;
   list-style: none;
   border: none;
-  font-family: 'Press Start 2P', cursive; 
+  /* font-family: 'Press Start 2P', cursive;  */
 }
 
 main {
@@ -27,6 +29,7 @@ main {
 }
 
 header{
+  font-family: 'Press Start 2P', cursive;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -90,7 +93,7 @@ header{
 /*##################################################################################*/
 
 table{
-  font-size: 25px;
+  font-size: 18px;
   margin-top: 30px;
 }
 
@@ -125,13 +128,16 @@ h2{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Press Start 2P', cursive;
+
   z-index: 999;
   width: 90vh;
   height: 50vh;
   /* background-image: url(../imagensDificil); */
   background-color: #6cabca; 
   border: 1px solid #000;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 20px;
   text-align: center;
   opacity: 0.9;
@@ -145,7 +151,7 @@ h2{
   display: flex;
   flex-direction: column;
   border-right: 5px solid black;
-
+  font-family: 'Press Start 2P', cursive;
 }
 
 .restart-btn, .home-btn{
@@ -155,14 +161,18 @@ h2{
   padding: 15px;
   border-radius: 10px;
   background-color: rgb(228, 228, 228);
-  color: rgb(8, 8, 8);
+  color: rgb(29, 28, 28); 
+  font-family: 'Archivo Black', sans-serif;
+
 }
 
 .home-btn{
   line-height: 30px;
 }
 
-.restart-btn, .home-btn:hover{
+.restart-btn:hover, .home-btn:hover{
   cursor: pointer;
+  background-color: #237198;
+  
 }
 

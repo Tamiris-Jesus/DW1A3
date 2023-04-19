@@ -85,7 +85,7 @@ header{
 /*##################################################################################*/
 
 table{
-  font-size: 25px;
+  font-size: 18px;
   margin-top: 30px;
 }
 
@@ -94,17 +94,18 @@ th:nth-child(1){
 }
 
 
-th:nth-child(2){
-  color: rgb(209, 208, 207);
-
-}
 
 th, td{
   color: rgb(209, 208, 207);
 }
 
-td:nth-child(2){
+th:nth-child(2),td:nth-child(2){
   color: rgb(209, 208, 207);
+  font-weight: bold;
+}
+
+td:nth-child(3), th:nth-child(3){
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 
@@ -123,13 +124,15 @@ h2{
   z-index: 999;
   width: 90vh;
   height: 50vh;
-  background-image: url(../imagens/back5.jpg);
+  background-image: url(../imagens/fundoMenu.jpg);
+  background-size: cover;
   /* background-color: #1C1C1C; */
   border: 1px solid #000;
   border-radius: 30px;
   padding: 20px;
   text-align: center;
   opacity: 0.9;
+
 }
 
 .ranking{

@@ -18,7 +18,6 @@ const characters = [
  'monstrosa5',
  'toystory1',
  'toystory2',
- 'toystory3',
  'toystory4',
  'toystory5',
  'toystory6',
@@ -27,11 +26,12 @@ const characters = [
  'up3',
  'up4',
  'up5',
+ 'up6',
  'valente1',
  'valente2',
  'valente3',
  'valente4',
- 'valente5',
+ 'valente6',
  'viva1',
  'viva2',
  'viva3',
@@ -54,7 +54,7 @@ const createElement = (tag, className) => {
 let firstCard = '';
 let secondCard = '';
 
-let players2 = []; // lista de jogadores
+let playersDificil = []; // lista de jogadores
 
 const showRanking = () => {
   const table = document.createElement('table');
@@ -74,8 +74,8 @@ const showRanking = () => {
   table.appendChild(thead);
 
   // linhas da tabela
-  players2.sort((a, b) => a.time - b.time);
-  players2.forEach((player, index) => {
+  playersDificil.sort((a, b) => a.time - b.time);
+  playersDificil.forEach((player, index) => {
     const tr = document.createElement('tr');
     const tdRank = document.createElement('td');
     const tdName = document.createElement('td');
@@ -112,14 +112,14 @@ const goToHomePage = () => {
 
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
-  if (disabledCards.length === 60) {
+  if (disabledCards.length === 72) {
     clearInterval(this.loop);
     alert(`Parabéns, ${spanPlayer.innerHTML}! você gerou o jogo. Seu tempo foi: ${timer.innerHTML} segundos`);
 
     endGameMenu(); // chama a função endGameMenu() para mostrar o menu de fim de jogo
 
-    localStorage.setItem('playerT', timer.innerHTML);
-    localStorage.setItem('playerN', spanPlayer.innerHTML);
+    localStorage.setItem('playerTim', timer.innerHTML);
+    localStorage.setItem('playerNo', spanPlayer.innerHTML);
   }
 };
 
@@ -151,9 +151,9 @@ const endGameMenu = () => {
 
   const playerN = spanPlayer.innerHTML;
   const playerT = timer.innerHTML;
-  players2.push({ name: playerN, time: playerT }); // adiciona o jogador atual à lista de jogadores
+  playersDificil.push({ name: playerN, time: playerT }); // adiciona o jogador atual à lista de jogadores
 
-  localStorage.setItem('players2', JSON.stringify(players2)); // armazena a lista de jogadores no localStorage
+  localStorage.setItem('playersDificil', JSON.stringify(playersDificil)); // armazena a lista de jogadores no localStorage
   showRanking();
 };
 
@@ -248,9 +248,9 @@ window.onload = () => {
   const container = document.querySelector('.container');
   container.style.display = 'none';
 
-  const storPlayers = JSON.parse(localStorage.getItem('players2'));
+  const storPlayers = JSON.parse(localStorage.getItem('playersDificil'));
 if (storPlayers) {
-  players2 = storPlayers;
+  playersDificil = storPlayers;
 }
 
   

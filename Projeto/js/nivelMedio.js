@@ -94,7 +94,7 @@ const goToHomePage = () => {
 
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
-  if (disabledCards.length === 4) {
+  if (disabledCards.length === 40) {
     clearInterval(this.loop);
     alert(`Parabéns, ${spanPlayer.innerHTML}! você gerou o jogo. Seu tempo foi: ${timer.innerHTML} segundos`);
 
