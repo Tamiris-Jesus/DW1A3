@@ -103,9 +103,9 @@ header{
   font-size: 12px;
 }
 
-/* header img{
-  width: 70px;
-} */
+header img{
+  width: 10vh;
+}
 
 /* Balance ================ */
 
