@@ -96,14 +96,16 @@ button:hover{
 
 /* Header ================ */
 header{
-  background: #2D4A22;
+  background-color: #2F4F4F;
+  /* background: #2D4A22; */
   padding: 2rem 0 10rem;
   text-align: center;
+  color: white;
+  font-size: 12px;
 }
 
-#logo{
-  color: #fff;
-  font-weight: 100;
+header img{
+  width: 10vh;
 }
 
 /* Balance ================ */
@@ -168,6 +170,8 @@ table tbody tr td:first-child
     border-radius: 0.25rem 0 0 0.25rem;
 }
 
+
+
 table thead tr th:last-child, 
 table tbody tr td:last-child
 {
@@ -187,6 +191,7 @@ table tbody tr{
 
 table tbody tr:hover{
   opacity: 1;
+  cursor: pointer;
 }
 
 table tbody td{
