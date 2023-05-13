@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visualizador CSS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <h1>Visualizador de propriedades CSS</h1>
+    <div id="container">
+    <div id="box">
+    </div>
+      <div id="controls">
+        <ul>
+          <li>
+            <label for="width-range">Largura:</label>
+            <input type="range" id="width-range" min="0" max="400" value="200">
+          </li>
+          <li>
+            <label for="height-range">Altura:</label>
+            <input type="range" id="height-range" min="0" max="400" value="200">
+          </li>
+          <li>
+            <label for="background-color-picker">Cor de Fundo:</label>
+            <input type="color" id="background-color-picker" value="#ffffff">
+          </li>
+          <li>
+            <label for="border-width-range">Largura da Borda:</label>
+            <input type="range" id="border-width-range" min="0" max="20" value="1">
+          </li>
+          <li>
+            <label for="border-color-picker">Cor da Borda:</label>
+            <input type="color" id="border-color-picker" value="#000000">
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <label for="margin-top-range">Margem Superior:</label>
+            <input type="range" id="margin-top-range" min="0" max="150" value="10">
+          </li>
+          <li>
+            <label for="margin-right-range">Margem Direita:</label>
+            <input type="range" id="margin-right-range" min="0" max="50" value="10">
+          </li>
+          <li>
+            <label for="margin-bottom-range">Margem Inferior:</label>
+            <input type="range" id="margin-bottom-range" min="0" max="50" value="10">
+          </li>
+          <li>
+            <label for="margin-left-range">Margem Esquerda:</label>
+            <input type="range" id="margin-left-range" min="0" max="50" value="10">
+          </li>
+          <li>
+            <label for="border-radius-range">Borda arredondada:</label>
+            <input type="range" id="border-radius-range" min="0" max="150" value="0">
+          </li>
+        </ul>
+      </div>
+      <div id="info">
+        <h2>CSS DO ELEMENTO</h2>
+      
+      <div id="css-info">
+        <pre id="css-code">
+        </pre>
+      </div>
+    </div>
+  </div>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
