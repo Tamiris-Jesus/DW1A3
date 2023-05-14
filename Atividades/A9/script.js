@@ -41,7 +41,7 @@ function updateCssInfo() {
                        margin-right: ${marginRight};<br>
                        margin-bottom: ${marginBottom};<br>
                        margin-left: ${marginLeft};<br>
-                       border-radius: ${borderRadius};<br> `;
+                       border-radius: ${borderRadius};<br>`;
 }
 
 // Adiciona os eventos aos elementos de controle
