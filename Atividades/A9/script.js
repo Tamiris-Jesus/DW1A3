@@ -1,109 +1,47 @@
 
 // Seleciona os elementos do HTML
-const box = document.getElementById("box");
-const controls = document.getElementById("controls");
-const widthRange = document.getElementById("width-range");
-const heightRange = document.getElementById("height-range");
-const backgroundColorPicker = document.getElementById("background-color-picker");
-const borderWidthRange = document.getElementById("border-width-range");
-const borderColorPicker = document.getElementById("border-color-picker");
-const marginTopRange = document.getElementById("margin-top-range");
-const marginRightRange = document.getElementById("margin-right-range");
-const marginBottomRange = document.getElementById("margin-bottom-range");
-const marginLeftRange = document.getElementById("margin-left-range");
-const borderRadiusRange = document.getElementById("border-radius-range");
+const box = document.getElementById("custom-box");
+const rotationRange = document.getElementById("rotation-range");
+const scaleRange = document.getElementById("scale-range");
+const translateXRange = document.getElementById("translateX-range");
+const translateYRange = document.getElementById("translateY-range");
+const skewXRange = document.getElementById("skewX-range");
+const skewYRange = document.getElementById("skewY-range");
+const transitionDuration = document.getElementById("transition-duration");
+const cssInfo = document.getElementById("css-info");
 
-// Função que atualiza as informações do CSS na div de informações 
 
+// Função para atualizar as informações do CSS e aplicar as transformações
 function updateCssInfo() {
-  const cssInfo = document.getElementById("css-info");
+  const rotation = rotationRange.value;
+  const scale = scaleRange.value;
+  const translateX = translateXRange.value;
+  const translateY = translateYRange.value;
+  const skewX = skewXRange.value;
+  const skewY = skewYRange.value;
+  const duration = transitionDuration.value;
 
-  // Obtém as propriedades CSS do elemento
-  const computedStyle = window.getComputedStyle(box);
-  const width = computedStyle.getPropertyValue("width");
-  const height = computedStyle.getPropertyValue("height");
-  const backgroundColor = computedStyle.getPropertyValue("background-color");
-  const borderWidth = computedStyle.getPropertyValue("border-width");
-  const borderColor = computedStyle.getPropertyValue("border-color");
-  const marginTop = computedStyle.getPropertyValue("margin-top");
-  const marginRight = computedStyle.getPropertyValue("margin-right");
-  const marginBottom = computedStyle.getPropertyValue("margin-bottom");
-  const marginLeft = computedStyle.getPropertyValue("margin-left");
-  const borderRadius = computedStyle.getPropertyValue("border-radius");
+  const cssTransform = `rotate(${rotation}deg) scale(${scale}) translateX(${translateX}px) translateY(${translateY}px) skewX(${skewX}deg) skewY(${skewY}deg)`;
+  const cssTransition = `transform ${duration}s`;
 
-  // Atualiza o texto das informações do CSS
-  cssInfo.innerHTML = `width: ${width};<br>
-                       height: ${height};<br>
-                       background-color: ${backgroundColor};<br>
-                       border-width: ${borderWidth};<br>
-                       border-color: ${borderColor};<br>
-                       margin-top: ${marginTop};<br>
-                       margin-right: ${marginRight};<br>
-                       margin-bottom: ${marginBottom};<br>
-                       margin-left: ${marginLeft};<br>
-                       border-radius: ${borderRadius};<br>`;
+  box.style.transform = cssTransform;
+  box.style.transition = cssTransition;
+
+  cssInfo.innerHTML = `transform: ${cssTransform};<br><br>
+                       transition: ${cssTransition};`;
 }
 
-// Adiciona os eventos aos elementos de controle
+// Adiciona eventos de input aos elementos de controle
+rotationRange.addEventListener("input", updateCssInfo);
+scaleRange.addEventListener("input", updateCssInfo);
+translateXRange.addEventListener("input", updateCssInfo);
+translateYRange.addEventListener("input", updateCssInfo);
+skewXRange.addEventListener("input", updateCssInfo);
+skewYRange.addEventListener("input", updateCssInfo);
+transitionDuration.addEventListener("input", updateCssInfo);
 
-widthRange.addEventListener("input", function(event) {
-  box.style.width = event.target.value + "px";
-  updateCssInfo();
+// Define o código CSS formatado no elemento <code> usando Prism.js
 
-});
-
-heightRange.addEventListener("input", function(event) {
-  box.style.height = event.target.value + "px";
-  updateCssInfo();
-
-});
-
-backgroundColorPicker.addEventListener("input", function(event) {
-  box.style.backgroundColor = event.target.value;
-  updateCssInfo();
-
-});
-
-borderWidthRange.addEventListener("input", function(event) {
-  box.style.borderWidth = event.target.value + "px";
-  updateCssInfo();
-
-});
-
-borderColorPicker.addEventListener("input", function(event) {
-  box.style.borderColor = event.target.value;
-  updateCssInfo();
-
-});
-
-marginTopRange.addEventListener("input", function(event) {
-  box.style.marginTop = event.target.value + "px";
-  updateCssInfo();
-
-});
-
-marginRightRange.addEventListener("input", function(event) {
-  box.style.marginRight = event.target.value + "px";
-  updateCssInfo();
-
-});
-
-marginBottomRange.addEventListener("input", function(event) {
-  box.style.marginBottom = event.target.value + "px";
-  updateCssInfo();
-
-});
-
-marginLeftRange.addEventListener("input", function(event) {
-  box.style.marginLeft = event.target.value + "px";
-  updateCssInfo();
-
-});
-
-borderRadiusRange.addEventListener("input", function(event) {
-  box.style.borderRadius = event.target.value + "px";
-  updateCssInfo();
-});
 
 updateCssInfo();
 
