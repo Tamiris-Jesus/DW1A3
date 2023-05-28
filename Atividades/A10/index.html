@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./script.js" defer></script>
+  
+  <link rel="stylesheet" href="./style.css">
+
+  
+  <title>Document</title>
+</head>
+<body>
+
+    <h1>Formulário de devolução de produto</h1>
+
+  <form action="" id="form">
+
+    <label>CPF: </label>
+    <input type="text" data-js="cpf" data-min-digits="11" placeholder=" 000.000.000-00">
+  
+    <!-- <label>CNPJ: </label>
+    <input type="text" data-js="cnpj" data-min-digits="14" placeholder="00.000.000/0000-00">
+   -->
+    <label>RG: </label>
+    <input type="text" data-js="rg" data-min-digits="9" placeholder="00.000.000-0">
+  
+    <label>Telefone: (00) 00000-0000</label>
+    <input type="text" data-js="phone" id="tel" data-min-digits="10" placeholder="(00) 00000-0000">
+  
+    <label>CEP: </label>
+    <input type="text" data-js="cep" data-min-digits="8" placeholder="00000-000">
+  
+    <!-- <label>PIS:</label>
+    <input type="text" data-js="pis" data-min-digits="11" placeholder=" 000.00000.00-0">
+   -->
+    <label for="">Email:</label>
+    <input type="text" data-js="email" id="email" placeholder="exemplo@email.com">
+
+    <label for="">Número do cartão em que a compra foi realizada: </label>
+    <input type="text" data-js="cart" data-min-digits="16" placeholder="0000 0000 0000 0000">
+
+    <label for="">Numero de série do produto: </label>
+    <input type="text" data-js="numS" data-min-digits="10" placeholder="00-000000-00">
+
+    <button type="submit" id="button">Enviar</button>
+  
+  </form>
+
+</body>
+</html>
