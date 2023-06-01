@@ -96,7 +96,7 @@ const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
   if (disabledCards.length === 40) {
     clearInterval(this.loop);
-    alert(`Parabéns, ${spanPlayer.innerHTML}! você gerou o jogo. Seu tempo foi: ${timer.innerHTML} segundos`);
+    alert(`Parabéns, ${spanPlayer.innerHTML}! você zerou o jogo. Seu tempo foi: ${timer.innerHTML} segundos`);
 
     endGameMenu(); // chama a função endGameMenu() para mostrar o menu de fim de jogo
 
