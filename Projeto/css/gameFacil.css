@@ -3,7 +3,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-image: url('../img/bg.jpg');
+  background-image: url('../imagensFacil/bg.jpg');
   background-size: cover;
   min-height: 100vh;
   align-items: center;
@@ -59,7 +59,7 @@ header{
 }
 
 .back{
-  background-image: url('../img/back.png');
+  background-image: url('../imagensFacil/back.png');
   backface-visibility: hidden;
 }
 
@@ -99,11 +99,11 @@ td:nth-child(2){
 }
 
 h2{
-  color: rgb(97, 39, 0);
+  color: rgb(103, 41, 0);
   font-weight: bold;
 }
 
-
+/* Menu e Ranking */
 .container{
   display: none;
   position: fixed;
@@ -111,15 +111,23 @@ h2{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  border: 2px solid #000000;
+  border-radius: 15px;
+  box-shadow: 0 0 0 1px #888888, 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.3);
+
+  font-family: 'Press Start 2P', cursive;
+
   z-index: 999;
-  width: 80vh;
-  height: 40vh;
-  background-color: #F4A460;
-  border: 1px solid #000;
-  border-radius: 30px;
+  /* width: 90vh;
+  height: 50vh; */
+  /* min-height: 50vh; Alteração: usar min-height em vez de height */
+  background-color: #F4b565;
+  border-radius: 10px;
   padding: 20px;
   text-align: center;
   opacity: 0.9;
+
 }
 
 .ranking{
@@ -130,6 +138,7 @@ h2{
   display: flex;
   flex-direction: column;
   border-right: 5px solid black;
+  font-family: 'Press Start 2P', cursive;
 
 }
 
@@ -140,7 +149,15 @@ h2{
   padding: 15px;
   border-radius: 10px;
   background-color: rgb(218, 94, 11);
-  color: rgb(54, 22, 0);
+ 
+  color: rgb(53, 22, 1);
+  font-weight: bold;
+  font-family: 'Archivo Black', sans-serif;
+  transition: transform 0.3;
+}
+
+.restart-btn:hover, .home-btn:hover {
+  transform: translateY(-8px);
 }
 
 .home-btn{

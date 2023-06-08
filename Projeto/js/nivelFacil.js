@@ -66,16 +66,22 @@ const showRanking = () => {
   ranking.appendChild(table);
 };
 
+
 const restartGame = () => {
-  const menu = document.querySelector('.menu');
-  menu.style.display = 'none';
+  const container = document.querySelector('.container');
+  container.style.display = 'none';
 
   clearInterval(this.loop);
   timer.innerHTML = '00';
   grid.innerHTML = '';
   loadGame();
   startTimer();
+
+  // limpando o conteudo do ranking para evitar duplicação 
+  const ranking = document.querySelector('.ranking');
+  ranking.innerHTML = '';
 };
+
 
 const goToHomePage = () => {
   clearInterval(this.loop);
@@ -177,7 +183,7 @@ const createCard = (character) => {
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
 
-    front.style.backgroundImage = `url('../img/${character}.png')`;
+    front.style.backgroundImage = `url('../imagensFacil/${character}.png')`;
 
 
     card.appendChild(front);

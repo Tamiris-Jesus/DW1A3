@@ -8,16 +8,7 @@ body{
 }
 .container{
   overflow: hidden;
-  /* background-color: #3b3939; */
-  /* border: 2px solid rgb(117, 111, 111); */
-  /* border: 2px dotted #000; */
-  /* border: 2px dashed #000; */
-
-
-  /* border: 1px solid #000;
-  border-top: 1px solid #fff;
-  border-left: 1px solid #fff;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); */
+ 
 
   border: 2px solid rgb(240, 217, 217);
   border-radius: 15px;

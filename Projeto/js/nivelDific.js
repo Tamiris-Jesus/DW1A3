@@ -1,4 +1,3 @@
-
 const grid = document.querySelector('.grid');
 
 const spanPlayer = document.querySelector('.player');
@@ -6,44 +5,44 @@ const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
 
 const characters = [
- 'incriveis1',
- 'incriveis2',
- 'incriveis3',
- 'incriveis4',
- 'incriveis5',
- 'monstrosa1',
- 'monstrosa2',
- 'monstrosa3',
- 'monstrosa4',
- 'monstrosa5',
- 'toystory1',
- 'toystory2',
- 'toystory4',
- 'toystory5',
- 'toystory6',
- 'up1',
- 'up2',
- 'up3',
- 'up4',
- 'up5',
- 'up6',
- 'valente1',
- 'valente2',
- 'valente3',
- 'valente4',
- 'valente6',
- 'viva1',
- 'viva2',
- 'viva3',
- 'viva4',
- 'viva5',
- 'nemo1',
- 'nemo2',
- 'nemo3',
- 'nemo4',
- 'nemo5',
-
-];
+  'incriveis1',
+  'incriveis2',
+  'incriveis3',
+  'incriveis4',
+  'incriveis5',
+  'monstrosa1',
+  'monstrosa2',
+  'monstrosa3',
+  'monstrosa4',
+  'monstrosa5',
+  'toystory1',
+  'toystory2',
+  'toystory4',
+  'toystory5',
+  'toystory6',
+  'up1',
+  'up2',
+  'up3',
+  'up4',
+  'up5',
+  'up6',
+  'valente1',
+  'valente2',
+  'valente3',
+  'valente4',
+  'valente6',
+  'viva1',
+  'viva2',
+  'viva3',
+  'viva4',
+  'viva5',
+  'nemo1',
+  'nemo2',
+  'nemo3',
+  'nemo4',
+  'nemo5',
+ 
+ ];
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -54,7 +53,7 @@ const createElement = (tag, className) => {
 let firstCard = '';
 let secondCard = '';
 
-let playersDificil = []; // lista de jogadores
+let players = []; // lista de jogadores
 
 const showRanking = () => {
   const table = document.createElement('table');
@@ -74,8 +73,8 @@ const showRanking = () => {
   table.appendChild(thead);
 
   // linhas da tabela
-  playersDificil.sort((a, b) => a.time - b.time);
-  playersDificil.forEach((player, index) => {
+  players.sort((a, b) => a.time - b.time);
+  players.forEach((player, index) => {
     const tr = document.createElement('tr');
     const tdRank = document.createElement('td');
     const tdName = document.createElement('td');
@@ -104,6 +103,10 @@ const restartGame = () => {
   grid.innerHTML = '';
   loadGame();
   startTimer();
+
+  // limpando o conteudo do ranking para evitar duplicação 
+  const ranking = document.querySelector('.ranking');
+  ranking.innerHTML = '';
 };
 
 const goToHomePage = () => {
@@ -113,52 +116,17 @@ const goToHomePage = () => {
 
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
-  if (disabledCards.length === 2) {
+  if (disabledCards.length === 72) {
     clearInterval(this.loop);
     alert(`Parabéns, ${spanPlayer.innerHTML}! você zerou o jogo. Seu tempo foi: ${timer.innerHTML} segundos`);
 
     endGameMenu(); // chama a função endGameMenu() para mostrar o menu de fim de jogo
 
-    localStorage.setItem('playerTim', timer.innerHTML);
-    localStorage.setItem('playerNo', spanPlayer.innerHTML);
+    localStorage.setItem('playerTime', timer.innerHTML);
+    localStorage.setItem('playerName', spanPlayer.innerHTML);
   }
 };
 
-
-// const endGameMenu = () => {
-
-//   /*
-//   const menu = document.querySelector('.menu');
-//   menu.style.display = 'block';
-//   */
-
-//   const container = document.querySelector('.container');
-//   container.style.display = 'flex';
-
-
-
-
-//   const restartBtn = document.querySelector('.restart-btn');
-//   const homeBtn = document.querySelector('.home-btn');
-
-  
-
-//   restartBtn.addEventListener('click', () => {
-//     const container = document.querySelector('.container');
-//     container.style.display = 'none';
-//     restartGame();
-//   });
-//   homeBtn.addEventListener('click', () => {
-//     goToHomePage();
-//   });
-
-//   const playerN = spanPlayer.innerHTML;
-//   const playerT = timer.innerHTML;
-//   playersDificil.push({ name: playerN, time: playerT }); // adiciona o jogador atual à lista de jogadores
-
-//   localStorage.setItem('playersDificil', JSON.stringify(playersDificil)); // armazena a lista de jogadores no localStorage
-//   showRanking();
-// };
 
 const endGameMenu = () => {
 
@@ -189,6 +157,7 @@ const endGameMenu = () => {
   localStorage.setItem('players', JSON.stringify(players)); // armazena a lista de jogadores no localStorage
   showRanking();
 };
+
 
 const checkCards = () => {
     const firstCharacter = firstCard.getAttribute('data-character');
@@ -240,8 +209,6 @@ const createCard = (character) => {
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
 
-    /*  alterando pasta de onde vão vir as imagens    */ 
-
     front.style.backgroundImage = `url('../imagensDificil/${character}.jpg')`;
 
 
@@ -280,9 +247,9 @@ window.onload = () => {
   const container = document.querySelector('.container');
   container.style.display = 'none';
 
-  const storPlayers = JSON.parse(localStorage.getItem('playersDificil'));
-if (storPlayers) {
-  playersDificil = storPlayers;
+  const storedPlayers = JSON.parse(localStorage.getItem('players'));
+if (storedPlayers) {
+  players = storedPlayers;
 }
 
   

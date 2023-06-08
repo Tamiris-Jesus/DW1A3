@@ -129,14 +129,17 @@ h2{
   left: 50%;
   transform: translate(-50%, -50%);
   /* font-family: 'Poppins', sans-serif; */
+  border: 2px solid #000000;
+  border-radius: 15px;
+  box-shadow: 0 0 0 1px #888888, 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.3);
+
+
   font-family: 'Press Start 2P', cursive;
 
   z-index: 999;
-  width: 90vh;
-  height: 50vh;
-  /* background-image: url(../imagensDificil); */
-  background-color: #6cabca; 
-  border: 1px solid #000;
+  /* width: 90vh;
+  height: 50vh; */
+  background-color: rgb(132 192 220);
   border-radius: 10px;
   padding: 20px;
   text-align: center;
@@ -160,10 +163,14 @@ h2{
   margin-right: 25px;
   padding: 15px;
   border-radius: 10px;
-  background-color: rgb(228, 228, 228);
+  background-color: rgb(26, 126, 188);
   color: rgb(29, 28, 28); 
-  font-family: 'Archivo Black', sans-serif;
+  font-weight: bold;
+  transition: transform 0.3;
+}
 
+.restart-btn:hover, .home-btn:hover {
+  transform: translateY(-8px);
 }
 
 .home-btn{
@@ -172,7 +179,7 @@ h2{
 
 .restart-btn:hover, .home-btn:hover{
   cursor: pointer;
-  background-color: #237198;
+  /* background-color: #54b9ec; */
   
 }
 

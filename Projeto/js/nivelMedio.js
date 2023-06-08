@@ -76,16 +76,22 @@ const showRanking = () => {
   ranking.appendChild(table);
 };
 
+
 const restartGame = () => {
-  const menu = document.querySelector('.menu');
-  menu.style.display = 'none';
+  const container = document.querySelector('.container');
+  container.style.display = 'none';
 
   clearInterval(this.loop);
   timer.innerHTML = '00';
   grid.innerHTML = '';
   loadGame();
   startTimer();
+
+  // limpando o conteudo do ranking para evitar duplicação 
+  const ranking = document.querySelector('.ranking');
+  ranking.innerHTML = '';
 };
+
 
 const goToHomePage = () => {
   clearInterval(this.loop);
@@ -94,7 +100,7 @@ const goToHomePage = () => {
 
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
-  if (disabledCards.length === 40) {
+  if (disabledCards.length === 2) {
     clearInterval(this.loop);
     alert(`Parabéns, ${spanPlayer.innerHTML}! você zerou o jogo. Seu tempo foi: ${timer.innerHTML} segundos`);
 
@@ -192,7 +198,7 @@ const createCard = (character) => {
 
     /*  alterando pasta de onde vão vir as imagens    */ 
 
-    front.style.backgroundImage = `url('../imagens/${character}.jpg')`;
+    front.style.backgroundImage = `url('../imagensMedio/${character}.jpg')`;
 
 
     card.appendChild(front);
