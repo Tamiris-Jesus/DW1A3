@@ -113,7 +113,7 @@ const goToHomePage = () => {
 
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
-  if (disabledCards.length === 2) {
+  if (disabledCards.length === 72) {
     clearInterval(this.loop);
     alert(`Parabéns, ${spanPlayer.innerHTML}! você zerou o jogo. Seu tempo foi: ${timer.innerHTML} segundos`);
 
