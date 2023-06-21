@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+
+  <!-- Inclua os arquivos CSS do Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Inclua os arquivos JavaScript do Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+  <title>Cadastro | Formulário</title>
+</head>
+<body>
+  <div class="container center-align">
+    <h1 id="text">CADASTRO</h1>
+    <form class="width-form">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="nome" required>
+                <label for="nome">Nome</label>
+            </div>
+            <div class="input-field">
+                <input type="date" id="data_nascimento" min="1920-01-01" max="2023-05-18" required>
+                <label for="data_nascimento">Data de Nascimento</label>
+            </div>
+        </div>
+        <div class="row">
+          <div class="input-field">
+              <select id="genero" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="feminino">Feminino</option>
+                  <option value="outro">Outro</option>
+              </select>
+              <label for="genero">Gênero</label>
+          </div>
+            <div class="input-field">
+                <input type="number" id="idade" readonly>
+                <label for="idade">Idade</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="cep" required>
+                <label for="cep">CEP</label>
+                <button class="btn-floating btn-small" id="consultar-btn">
+                    <img src="./img/busca.png" alt="" width="20px">
+                </button>
+            </div>
+            <div class="input-field">
+                <input type="text" id="endereco" readonly>
+                <label for="endereco">Endereço</label>
+            </div>
+            <div class="input-field">
+              <input type="text" id="bairro" readonly>
+              <label for="bairro">Bairro</label>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="complemento">
+                <label for="complemento">Complemento</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="cidade" readonly>
+                <label for="cidade">Cidade</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="estado" readonly>
+                <label for="estado">Estado</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="submit" value="Enviar" class="btn">
+            </div>
+        </div>
+    </form>
+  </div>
+</body>
+</html>
